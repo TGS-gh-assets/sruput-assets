@@ -1,8 +1,10 @@
 $(document).ready(function() {
-		$(".js-select2").select2({
+	$('.js-select2').each(function () {
+		$(this).select2({
 			minimumInputLength: 3,
 			theme: 'bootstrap4',
 			width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+			placeholder: 'Masukan Kota / Kecamatan',
 			ajax: {
 					url: 'https://api.sruput.id/alamat/',
 					dataType: 'json',
@@ -18,8 +20,8 @@ $(document).ready(function() {
 						var more = (params.page * 10) < data.total;
 						return { results: data.items, pagination: {more:more} };
 					},
-					cache: false,
-					placeholder: 'Masukan Kota / Kecamatan'
+					cache: true
 				}
 		});
 	});
+});
