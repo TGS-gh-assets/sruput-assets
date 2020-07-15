@@ -19,7 +19,7 @@ $(document).ready(function() {
 						return { results: data.items, pagination: {more:more} };
 					},
 					cache: false,
-					placeholder: 'Masukan Kota / Kecamatan',
+					placeholder: 'Masukan Kota / Kecamatan'
 				}
 		});
 	});
